@@ -15,3 +15,5 @@
 ![Game Demo]("C:\Users\Егор\IdeaProjects\brain-games\docs\game-demo2.png")
 ![Game Demo]("C:\Users\Егор\IdeaProjects\brain-games\docs\game-demo3.png")
 ![Game Demo]("C:\Users\Егор\IdeaProjects\brain-games\docs\game-demo4.png")
+![Game Demo]("C:\Users\Егор\IdeaProjects\brain-games\docs\game-demo5.png")
+![Game Demo]("C:\Users\Егор\IdeaProjects\brain-games\docs\game-demo6.png")
