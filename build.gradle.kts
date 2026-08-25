@@ -1,15 +1,20 @@
 plugins {
-    id("java")
+    application
     id("com.github.ben-manes.versions") version "0.54.0"
+}
+
+application {
+    mainClass.set("hexlet.code.App")
 }
 
 group = "org.example"
 version = "1.0-SNAPSHOT"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
+
 
 repositories {
     mavenCentral()
