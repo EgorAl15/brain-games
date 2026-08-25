@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.QuestionGenerator;
 import hexlet.code.AnswerCalculator;
-import hexlet.code.utils.GcdUtils;
+import hexlet.code.utils.GcdUtils; // Убедись, что у тебя есть этот файл с методом computeGcd
 
 import java.util.Random;
 import java.util.Scanner;
@@ -13,28 +13,31 @@ public class GcdGame {
     private static final Random RANDOM = new Random();
 
     public static void play(Scanner scanner, String name) {
-        System.out.println(DESCRIPTION); // Выводим описание перед началом раундов
+        System.out.println(DESCRIPTION);
         Engine.run(scanner, name, new GcdQuestionGenerator(), new GcdAnswerCalculator());
     }
 
-    // Генератор вопроса: создает строку "число1 число2"
     static class GcdQuestionGenerator implements QuestionGenerator {
         @Override
-        public String generate() { // <-- Важно: именно generate(), а не generateQuestion()
-            int num1 = RANDOM.nextInt(1, 100);
-            int num2 = RANDOM.nextInt(1, 100);
-            return num1 + " " + num2;
+        public String generate() {
+            int a = RANDOM.nextInt(50) + 1;
+            int b = RANDOM.nextInt(50) + 1;
+            // Возвращаем строку вида "15 25"
+            return a + " " + b;
         }
     }
 
-    // Калькулятор ответа: вычисляет правильный НОД
     static class GcdAnswerCalculator implements AnswerCalculator {
         @Override
-        public int calculate(String question) { // <-- Именно calculate(), а не calculateAnswer()
+        public String calculate(String question) {
             String[] parts = question.split(" ");
-            int num1 = Integer.parseInt(parts[0]);
-            int num2 = Integer.parseInt(parts[1]);
-            return GcdUtils.computeGcd(num1, num2); // Возвращаем int, как требует интерфейс
+            int a = Integer.parseInt(parts[0]);
+            int b = Integer.parseInt(parts[1]);
+
+            int result = GcdUtils.computeGcd(a, b);
+
+            // ВАЖНО: возвращаем СТРОКУ, а не int!
+            return String.valueOf(result);
         }
     }
 }

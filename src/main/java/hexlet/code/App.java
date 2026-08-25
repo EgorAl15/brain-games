@@ -2,11 +2,12 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-// Импорты всех игр из пакета games
+// Импорты всех игр
 import hexlet.code.games.EvenGame;
 import hexlet.code.games.CalcGame;
 import hexlet.code.games.GcdGame;
 import hexlet.code.games.ProgressionGame;
+import hexlet.code.games.PrimeGame;
 
 public class App {
     public static void main(String[] args) {
@@ -25,6 +26,7 @@ public class App {
             System.out.println("3 - Calc");
             System.out.println("4 - GCD");
             System.out.println("5 - Progression");
+            System.out.println("6 - Prime");
             System.out.println("0 - Exit");
             System.out.print("Your choice: ");
 
@@ -46,11 +48,14 @@ public class App {
                 case "5":
                     ProgressionGame.play(scanner, name);
                     break;
+                case "6":
+                    PrimeGame.play(scanner, name);
+                    break;
                 case "0":
                     System.out.println("Goodbye, " + name + "!");
                     return;
                 default:
-                    System.out.println("Invalid choice. Please enter 1, 2, 3, 4, 5 or 0.");
+                    System.out.println("Invalid choice. Please enter 1, 2, 3, 4, 5, 6 or 0.");
             }
         }
     }
