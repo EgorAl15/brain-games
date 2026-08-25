@@ -6,6 +6,7 @@ import java.util.Scanner;
 import hexlet.code.games.EvenGame;
 import hexlet.code.games.CalcGame;
 import hexlet.code.games.GcdGame;
+import hexlet.code.games.ProgressionGame;
 
 public class App {
     public static void main(String[] args) {
@@ -23,6 +24,7 @@ public class App {
             System.out.println("2 - Even");
             System.out.println("3 - Calc");
             System.out.println("4 - GCD");
+            System.out.println("5 - Progression");
             System.out.println("0 - Exit");
             System.out.print("Your choice: ");
 
@@ -39,14 +41,16 @@ public class App {
                     CalcGame.play(scanner, name);
                     break;
                 case "4":
-                    // Для GCD игра сама выведет описание ("Find the greatest common divisor...")
                     GcdGame.play(scanner, name);
+                    break;
+                case "5":
+                    ProgressionGame.play(scanner, name);
                     break;
                 case "0":
                     System.out.println("Goodbye, " + name + "!");
                     return;
                 default:
-                    System.out.println("Invalid choice. Please enter 1, 2, 3, 4 or 0.");
+                    System.out.println("Invalid choice. Please enter 1, 2, 3, 4, 5 or 0.");
             }
         }
     }
